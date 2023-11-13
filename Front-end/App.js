@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { UtilsContext } from './src/config/context'
+import { UtilsContext } from './src/Contexts/context'
 
 import { Index } from "./src/Pages/Index"
 // import { Login } from "./src/pages/login"
