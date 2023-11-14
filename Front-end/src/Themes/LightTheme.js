@@ -2,18 +2,20 @@
 // https://www.browserstack.com/guide/how-to-make-react-native-app-responsive
 import { StyleSheet } from "react-native";
 import { verticalScale, horizontalScale, moderateScale } from "./Metrics";
+import defaultStyle from "./Default";
 
 const styles = StyleSheet.create({
+    container: {
+        ...defaultStyle.container
+    },
+    
     MButtonCont: {
-        height: verticalScale(70),
-        width: horizontalScale(150),
-        marginTop: verticalScale(100),
-        backgroundColor: "red",
-        borderRadius: 20,
+        ...defaultStyle.MButtonCont,
+        backgroundColor: "white"
     },
     MButtonText: {
-        color: "white",
-        fontSize: moderateScale(18)
+        ...defaultStyle.MButtonText,
+        color: "black"
     },
 });
 
