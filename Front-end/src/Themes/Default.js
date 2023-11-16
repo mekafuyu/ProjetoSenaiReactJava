@@ -11,7 +11,9 @@ const defaultStyle = StyleSheet.create({
     },
     
     MButtonCont: {
-        justifyContent: "center",
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-around",
         alignItems: "center",
         height: verticalScale(70),
         width: horizontalScale(150),
@@ -20,8 +22,12 @@ const defaultStyle = StyleSheet.create({
         borderRadius: 20,
     },
     MButtonText: {
-        fontSize: moderateScale(18)
+        fontSize: moderateScale(14)
     },
+    MButtonIcon: {
+        width: moderateScale(20),
+        height: moderateScale(20),
+    }
 });
 
 export default defaultStyle;

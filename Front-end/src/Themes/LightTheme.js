@@ -5,6 +5,8 @@ import { verticalScale, horizontalScale, moderateScale } from "./Metrics";
 import defaultStyle from "./Default";
 
 const styles = StyleSheet.create({
+    ...defaultStyle,
+    
     container: {
         ...defaultStyle.container
     },
