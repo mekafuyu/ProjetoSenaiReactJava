@@ -8,23 +8,24 @@ export function Index(props){
         <SafeAreaView>
             <View style={styles.container}>
                 <MButton
-                    onPress = { () => console.log("1")}
+                    onPress = { () => props.navigation.navigate("Login")}
                     icon = {faRightToBracket}
                     value = "Login">
                 </MButton>
                 <MButton
-                    onPress = { () => console.log("2")}
+                    onPress = { () => props.navigation.navigate("Cadastro")}
                     color = "yellow"
                     value = "Cadastro">
                 </MButton>
                 <MButton
-                    onPress = { () => console.log("3")}
-                    color = "orange"
-                    value = "aaaaaaaaaa">
+                    onPress = { () => props.navigation.navigate("NewCondo")}
+                    color = "yellow"
+                    value = "Novo Condominio">
                 </MButton>
                 <MButton
-                    onPress = { () => console.log("corgi")}
-                    >
+                    onPress = { () => props.navigation.navigate("ViewCondos")}
+                    color = "yellow"
+                    value = "Condos">
                 </MButton>
             </View>
         </SafeAreaView>

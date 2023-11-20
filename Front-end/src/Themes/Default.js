@@ -10,12 +10,18 @@ const defaultStyle = StyleSheet.create({
         alignItems: "center",
     },
     
+    MTextInputCont: {
+        flex: 1,
+        alignItems: "start",
+        height: verticalScale(70),
+        width: horizontalScale(100),
+        marginTop: verticalScale(10),
+    },
     MButtonCont: {
         flex: 1,
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        height: verticalScale(70),
         width: horizontalScale(150),
         marginTop: verticalScale(10),
         backgroundColor: "white",
