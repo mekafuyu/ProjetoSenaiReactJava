@@ -8,9 +8,9 @@ export default function MTextInput(props) {
   const setValue = props.setValue;
   return (
     <View style={styles.MTextInputCont}>
-      <Text style={{ color: "white", textAlign: "left" }}>{props.label}</Text>
+      <Text style={styles.MTextInputLabel}>{props.label}</Text>
       <TextInput
-        style={{ backgroundColor: "white", width: "100%", borderRadius: 20 }}
+        style={styles.MTextInputField}
         onChangeText={(text) => setValue(text)}
       ></TextInput>
     </View>

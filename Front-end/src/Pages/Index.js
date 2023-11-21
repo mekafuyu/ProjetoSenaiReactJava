@@ -1,9 +1,25 @@
 import styles from "../Themes/LightTheme";
 import MButton from "../Components/MButton";
+import MSelect from "../Components/MSelect";
 import { SafeAreaView, View } from "react-native";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 export function Index(props) {
+  var options = []
+
+  async function getCondos()
+  {
+    await axios.get("http://localhost:8080/condominium")
+      .then((data) => {
+        options = []
+        data.data.map((condo) =>{
+          options.push({value: condo.id, label: condo.name})
+        })
+      })
+
+  }
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -27,6 +43,25 @@ export function Index(props) {
           color="yellow"
           value="Ver Condominios"
         ></MButton>
+        <MButton
+          onPress={() => {
+            axios.get("http://localhost:8080/condominium")
+                .then((data) => {
+                  options = []
+                  data.data.map((condo) =>{
+                    options.push({value: condo.id, label: condo.name})
+                    console.log(options)
+                  }
+                  )
+            })
+          }}
+          color="yellow"
+          value="Get condos"
+        ></MButton>
+        <MSelect
+          options={options}
+          onFocus={() => getCondos()}
+        />
       </View>
     </SafeAreaView>
   );

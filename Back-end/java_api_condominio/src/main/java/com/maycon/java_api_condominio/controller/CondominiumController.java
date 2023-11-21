@@ -31,7 +31,10 @@ public class CondominiumController {
     @GetMapping("/{name}")
     public List<CondominiumModel> getCondominiumsByName(@PathVariable String name)
     {
+        System.out.println("==============="+name+"==================");
         List<CondominiumModel> listRes = this.condominiumService.findByName(name);
+        System.out.println(listRes);
+    
         return listRes;
     }
     

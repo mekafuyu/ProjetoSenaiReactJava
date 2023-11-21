@@ -1,10 +1,14 @@
 import styles from "../Themes/LightTheme";
 import MButton from "../Components/MButton";
 import MTextInput from "../Components/MTextInput";
+import MSelect from "../Components/MSelect"
 import { SafeAreaView, View } from "react-native";
 import { useState, useContext } from "react";
+import axios from "axios";
 
 export function Cadastro(props) {
+
+
   const [user, setUser] = useState({
     name: "",
     cpf: "",
@@ -68,10 +72,14 @@ export function Cadastro(props) {
           }}
         ></MTextInput>
         <MButton
-          onPress={() => console.log(user)}
-          width="40"
+          onPress={() => {
+            axios.get(`http://localhost:8080/condominium/${user.condominium}`)
+                 .then((data) => { console.log(data.data) })
+          }}
+          width="100"
           value="test"
         ></MButton>
+        
       </View>
     </SafeAreaView>
   );

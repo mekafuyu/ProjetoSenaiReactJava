@@ -8,6 +8,6 @@ import org.springframework.data.mongodb.repository.Query;
 import com.maycon.java_api_condominio.model.CondominiumModel;
 
 public interface CondominiumRepository extends MongoRepository<CondominiumModel, String> {
-    @Query("{'name': ?0")
+    @Query("{'name': /.*?0.*/}")
     List<CondominiumModel> findByName(String name);
 }

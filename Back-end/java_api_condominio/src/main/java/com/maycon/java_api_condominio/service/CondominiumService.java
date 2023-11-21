@@ -33,7 +33,9 @@ public class CondominiumService {
 
     public List<CondominiumModel> findByName(String name)
     {
-        return (List<CondominiumModel>) this.condominiumRepository.findByName(name);
+        List<CondominiumModel> listRes = this.condominiumRepository.findByName(name);
+        System.out.println(listRes);
+        return listRes ;
     }
 
     public void delete(String id)

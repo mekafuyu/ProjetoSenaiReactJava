@@ -10,6 +10,10 @@ const defaultStyle = StyleSheet.create({
     alignItems: "center",
   },
 
+  MSelectField: {
+    width: horizontalScale(150)
+  },
+
   MTextInputCont: {
     flex: 1,
     alignItems: "start",
@@ -17,6 +21,16 @@ const defaultStyle = StyleSheet.create({
     width: horizontalScale(100),
     marginTop: verticalScale(10),
   },
+  MTextInputField: {
+    backgroundColor: "grey",
+    width: "100%",
+    borderRadius: 20,
+  },
+  MTextInputLabel: {
+    textAlign: "left",
+    color: "black",
+  },
+
   MButtonCont: {
     flex: 1,
     flexDirection: "row",

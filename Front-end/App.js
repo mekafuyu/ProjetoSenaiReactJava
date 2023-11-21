@@ -22,7 +22,7 @@ export default function App() {
     <NavigationContainer>
       <UtilsContext.Provider value={{ utils, setUtils }}>
         <Stack.Navigator
-          screenOptions={{ cardStyle: { backgroundColor: "black" } }}
+          screenOptions={{ cardStyle: { backgroundColor: "white" } }}
         >
           <Stack.Screen name="Index" component={Index} />
           <Stack.Screen name="Login" component={Login} />
