@@ -5,20 +5,20 @@ import { verticalScale, horizontalScale, moderateScale } from "./Metrics";
 import defaultStyle from "./Default";
 
 const styles = StyleSheet.create({
-    ...defaultStyle,
-    
-    container: {
-        ...defaultStyle.container
-    },
-    
-    MButtonCont: {
-        ...defaultStyle.MButtonCont,
-        backgroundColor: "white"
-    },
-    MButtonText: {
-        ...defaultStyle.MButtonText,
-        color: "black"
-    },
+  ...defaultStyle,
+
+  container: {
+    ...defaultStyle.container,
+  },
+
+  MButtonCont: {
+    ...defaultStyle.MButtonCont,
+    backgroundColor: "white",
+  },
+  MButtonText: {
+    ...defaultStyle.MButtonText,
+    color: "black",
+  },
 });
 
 export default styles;
