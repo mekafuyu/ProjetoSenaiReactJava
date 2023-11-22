@@ -7,7 +7,7 @@ import { UtilsContext } from "./src/Contexts/context";
 import { Index } from "./src/Pages/Index";
 import { Login } from "./src/pages/Login";
 import { Cadastro } from "./src/Pages/Cadastro";
-import ViewCondos from "./src/Pages/ViewCondos";
+import { ViewCondos } from "./src/Pages/ViewCondos";
 import { NewCondo } from "./src/Pages/NewCondo";
 // import { Cadastro } from "./src/pages/cadastro"
 // import { Calculadora } from "./src/pages/calculadora"

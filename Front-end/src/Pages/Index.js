@@ -4,65 +4,65 @@ import MSelect from "../Components/MSelect";
 import { SafeAreaView, View } from "react-native";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import React from "react";
 
-export function Index(props) {
-  var options = []
+export class Index extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {options: []}
+  }
 
-  async function getCondos()
+  componentDidMount(){
+    this.getCondos()
+  }
+
+  async getCondos()
   {
     await axios.get("http://localhost:8080/condominium")
       .then((data) => {
-        options = []
+        let newOptions = []
         data.data.map((condo) =>{
-          options.push({value: condo.id, label: condo.name})
+          newOptions.push({value: condo.id, label: condo.name})
         })
+        console.log(newOptions)
+        this.options = newOptions
+        this.setState({...this.state, options: newOptions})
       })
 
   }
 
-  return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <MButton
-          onPress={() => props.navigation.navigate("Login")}
-          icon={faRightToBracket}
-          value="Login"
-        ></MButton>
-        <MButton
-          onPress={() => props.navigation.navigate("Cadastro")}
-          color="yellow"
-          value="Cadastro"
-        ></MButton>
-        <MButton
-          onPress={() => props.navigation.navigate("NewCondo")}
-          color="yellow"
-          value="Novo Condominio"
-        ></MButton>
-        <MButton
-          onPress={() => props.navigation.navigate("ViewCondos")}
-          color="yellow"
-          value="Ver Condominios"
-        ></MButton>
-        <MButton
-          onPress={() => {
-            axios.get("http://localhost:8080/condominium")
-                .then((data) => {
-                  options = []
-                  data.data.map((condo) =>{
-                    options.push({value: condo.id, label: condo.name})
-                    console.log(options)
-                  }
-                  )
-            })
-          }}
-          color="yellow"
-          value="Get condos"
-        ></MButton>
-        <MSelect
-          options={options}
-          onFocus={() => getCondos()}
-        />
-      </View>
-    </SafeAreaView>
-  );
+  render (){
+    return(
+      <SafeAreaView>
+        <View style={styles.container}>
+          <MButton
+            onPress={() => this.props.navigation.navigate("Login")}
+            icon={faRightToBracket}
+            value="Login"
+          ></MButton>
+          <MButton
+            onPress={() => this.props.navigation.navigate("Cadastro")}
+            color="yellow"
+            value="Cadastro"
+          ></MButton>
+          <MButton
+            onPress={() => this.props.navigation.navigate("NewCondo")}
+            color="yellow"
+            value="Novo Condominio"
+          ></MButton>
+          <MButton
+            onPress={() => this.props.navigation.navigate("ViewCondos")}
+            color="yellow"
+            value="Ver Condominios"
+          ></MButton>
+          <MButton
+            onPress={() => this.getCondos()}
+            color="yellow"
+            value="Get condos"
+          ></MButton>
+          
+        </View>
+      </SafeAreaView>
+    )
+  };
 }

@@ -36,6 +36,11 @@ public class ResidentService {
         return (List<ResidentModel>) this.residentRepository.findByName(name);
     }
 
+    public List<ResidentModel> findByCondoId(String id)
+    {
+        return (List<ResidentModel>) this.residentRepository.findByCondoId(id);
+    }
+
     public void delete(String id)
     {
         this.residentRepository.deleteById(id);

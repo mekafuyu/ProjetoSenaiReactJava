@@ -1,6 +1,7 @@
 package com.maycon.java_api_condominio.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,8 +35,15 @@ public class CondominiumService {
     public List<CondominiumModel> findByName(String name)
     {
         List<CondominiumModel> listRes = this.condominiumRepository.findByName(name);
-        System.out.println(listRes);
         return listRes ;
+    }
+
+    public CondominiumModel findById(String id)
+    {
+        Optional<CondominiumModel> res = this.condominiumRepository.findById(id);
+        if(res.isPresent())
+            return res.get();
+        return new CondominiumModel();
     }
 
     public void delete(String id)

@@ -28,6 +28,14 @@ public class ResidentController {
         return listRes;
     }
 
+    @GetMapping("/condo/{id}")
+    public List<ResidentModel> getResidentsByCondo(@PathVariable String id)
+    {
+        System.out.println(id+"======================================");
+        List<ResidentModel> listRes = this.residentService.findByCondoId(id);
+        return listRes;
+    }
+
     @GetMapping("/{name}")
     public List<ResidentModel> getResidentsByName(@PathVariable String name)
     {
@@ -35,7 +43,7 @@ public class ResidentController {
         return listRes;
     }
     
-    @PostMapping("")
+    @PostMapping
     public void newResident(@RequestBody ResidentModel newResident)
     {
         this.residentService.save(newResident);

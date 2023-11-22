@@ -1,7 +1,6 @@
 package com.maycon.java_api_condominio.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -14,55 +13,53 @@ public class ResidentModel
 {
     @Id
     private String id;
-    @DBRef
     private String condominiumId;
     private String name;
     private String cpf;
+    private String pwd;
     private boolean propManager;
-    private int blockNumber;
-    private int apartNumber;
+    private String blockNumber;
+    private String apartNumber;
     
 
     public ResidentModel(
-        String condominiumId, String name, String cpf,
-        boolean propManager, int blockNumber, int apartNumber)
+        String condominiumId, String name,
+        String cpf, String pwd,
+        boolean propManager, String blockNumber,
+        String apartNumber)
     {
         this.condominiumId = condominiumId;
         this.name = name;
         this.cpf = cpf;
+        this.pwd = pwd;
         this.propManager = propManager;
         this.blockNumber = blockNumber;
         this.apartNumber = apartNumber;
     }
-    
+
     public ResidentModel(
-        String condominiumId, String name, String cpf,
-        boolean propManager, int blockNumber)
+        String condominiumId, String name,
+        String cpf, String pwd,
+        String blockNumber, String apartNumber)
     {
         this.condominiumId = condominiumId;
         this.name = name;
         this.cpf = cpf;
-        this.propManager = propManager;
+        this.pwd = pwd;
         this.blockNumber = blockNumber;
+        this.apartNumber = apartNumber;
     }
+    
 
     public ResidentModel(
-        String condominiumId, String name, String cpf,
-        boolean propManager)
-    {
-        this.condominiumId = condominiumId;
-        this.name = name;
-        this.cpf = cpf;
-        this.propManager = propManager;
-    }
-
-    public ResidentModel(
-        String condominiumId, String name, String cpf)
+        String condominiumId, String name,
+        String cpf)
     {
         this.condominiumId = condominiumId;
         this.name = name;
         this.cpf = cpf;
     }
+
     public ResidentModel(
         String name, String cpf)
     {

@@ -6,7 +6,7 @@ import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import React from "react";
 
-export default class ViewCondos extends React.Component {
+export class ViewCondos extends React.Component {
   constructor(props) {
     super(props);
     this.state = { condos: [{ id: "", name: "", cep: "" }] };

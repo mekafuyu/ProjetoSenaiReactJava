@@ -31,11 +31,15 @@ public class CondominiumController {
     @GetMapping("/{name}")
     public List<CondominiumModel> getCondominiumsByName(@PathVariable String name)
     {
-        System.out.println("==============="+name+"==================");
-        List<CondominiumModel> listRes = this.condominiumService.findByName(name);
-        System.out.println(listRes);
-    
+        List<CondominiumModel> listRes = this.condominiumService.findByName(name);    
         return listRes;
+    }
+
+    @GetMapping("/id/{id}")
+    public CondominiumModel getCondominiumsById(@PathVariable String id)
+    {
+        CondominiumModel res = this.condominiumService.findById(id);    
+        return res;
     }
     
     @PostMapping("")
