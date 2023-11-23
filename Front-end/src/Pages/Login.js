@@ -3,28 +3,34 @@ import MButton from "../Components/MButton";
 import MTextInput from "../Components/MTextInput";
 import { SafeAreaView, View } from "react-native";
 import { useState, useContext } from "react";
+import axios from "axios";
 
 export function Login(props) {
-  const [user, setUser] = useState({ cpf: "", pwd: "" });
+  const [currUser, setCurrUser] = useState({ cpf: "", pwd: "" });
+  const BASE_URL = process.env.REACT_APP_CONDO_API_URL;
+
+  function tryLogin(user){
+    axios.post("")
+  }
 
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <MTextInput
-          label="Email:"
-          value={user}
+          label="Cpf:"
+          value={currUser}
           setValue={(text) => {
-            setUser({ ...user, cpf: text });
+            setUser({ ...currUser, cpf: text });
           }}
         ></MTextInput>
         <MTextInput
           label="Senha:"
-          value={user}
+          value={currUser}
           setValue={(text) => {
-            setUser({ ...user, pwd: text });
+            setUser({ ...currUser, pwd: text });
           }}
         ></MTextInput>
-        <MButton onPress={() => console.log(user)} value="test"></MButton>
+        <MButton onPress={() => console.log(process.env.REACT_APP_CONDO_API_URL)} value="test"></MButton>
       </View>
     </SafeAreaView>
   );

@@ -44,7 +44,7 @@ export class Cadastro extends React.Component {
     if(this.state.user.condominiumId == "")
       return
     axios
-      .get(`http://localhost:8080/condominium/id/${this.state.user.condominium}`)
+      .get(`http://localhost:8080/condominium/id/${this.state.user.condominiumId}`)
       .then((data) => {
         console.log(data.data);
       });
@@ -133,7 +133,6 @@ export class Cadastro extends React.Component {
           <MButton
             onPress={() => {
               this.tryCad()
-              console.log(this.state.user)
             }}
             width="100"
             value="test"
