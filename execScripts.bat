@@ -1,0 +1,1 @@
+call Powershell -executionpolicy bypass -File ./installExtensions.ps1

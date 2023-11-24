@@ -9,6 +9,7 @@ import { Login } from "./src/pages/Login";
 import { Cadastro } from "./src/Pages/Cadastro";
 import { ViewCondos } from "./src/Pages/ViewCondos";
 import { NewCondo } from "./src/Pages/NewCondo";
+import { HomeResident } from "./src/Pages/HomeResident";
 
 export default function App() {
   const [utils, setUtils] = useState();
@@ -26,6 +27,7 @@ export default function App() {
           <Stack.Screen name="Cadastro" component={Cadastro} />
           <Stack.Screen name="NewCondo" component={NewCondo} />
           <Stack.Screen name="ViewCondos" component={ViewCondos} />
+          <Stack.Screen name="HomeResident" component={HomeResident} />
         </Stack.Navigator>
       </UtilsContext.Provider>
     </NavigationContainer>

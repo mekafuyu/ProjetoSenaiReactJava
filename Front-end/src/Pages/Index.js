@@ -10,6 +10,7 @@ export class Index extends React.Component{
   constructor(props) {
     super(props)
     this.state = {options: []}
+    this.apiUrl = process.env.EXPO_PUBLIC_API_URL;
   }
 
   componentDidMount(){

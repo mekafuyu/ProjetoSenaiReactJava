@@ -30,7 +30,7 @@ export function Login(props) {
             setUser({ ...currUser, pwd: text });
           }}
         ></MTextInput>
-        <MButton onPress={() => console.log(process.env.REACT_APP_CONDO_API_URL)} value="test"></MButton>
+        <MButton width="100" onPress={() => props.navigation.navigate("HomeResident")} value="login"></MButton>
       </View>
     </SafeAreaView>
   );
