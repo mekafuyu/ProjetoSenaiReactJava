@@ -7,7 +7,6 @@ import axios from "axios";
 
 export function Login(props) {
   const [currUser, setCurrUser] = useState({ cpf: "", pwd: "" });
-  const BASE_URL = process.env.REACT_APP_CONDO_API_URL;
 
   function tryLogin(user){
     axios.post("")

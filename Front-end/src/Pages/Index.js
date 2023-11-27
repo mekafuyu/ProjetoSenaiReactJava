@@ -42,6 +42,11 @@ export class Index extends React.Component{
             value="Login"
           ></MButton>
           <MButton
+            onPress={() => this.props.navigation.navigate("HomeFunc")}
+            icon={faRightToBracket}
+            value="Login Func"
+          ></MButton>
+          <MButton
             onPress={() => this.props.navigation.navigate("Cadastro")}
             color="yellow"
             value="Cadastro"
