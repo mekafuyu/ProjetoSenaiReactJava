@@ -11,7 +11,8 @@ export function ReservarChurrasqueira(props) {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <MDateInput></MDateInput>
+        <MDateInput
+          onChange={(e) => console.log(e.target.value)}/>
       </View>
     </SafeAreaView>
   );

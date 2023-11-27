@@ -11,7 +11,8 @@ export default function MDateInput(props) {
       <Text style={styles.MTextInputLabel}>{props.label}</Text>
       <input
         style={styles.MTextInputField}
-        type={"date"} />
+        type={"datetime-local"}
+        onChange={(event) => props.onChange(event)}/>
     </View>
   );
 }
