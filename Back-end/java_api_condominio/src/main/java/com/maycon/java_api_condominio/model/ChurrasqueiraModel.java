@@ -10,7 +10,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-@Document("vaga")
+@Document("churrasqueira")
 public class ChurrasqueiraModel {
     
     @Id

@@ -8,8 +8,8 @@ export function HomeFunc(props) {
     <SafeAreaView>
       <View style={styles.container}>
         <MButton
-          onPress={() => props.navigation.navigate("ReservarChurrasqueira")}
-          value="Receber Visitante"
+          onPress={() => props.navigation.navigate("Cadastrar Itens")}
+          value="Cadastrar Itens"
         ></MButton>
         <MButton
           onPress={() => props.navigation.navigate("VisualizarCondoResident")}
