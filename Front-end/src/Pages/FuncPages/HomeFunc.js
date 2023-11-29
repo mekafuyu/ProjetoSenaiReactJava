@@ -9,11 +9,13 @@ export function HomeFunc(props) {
       <View style={styles.container}>
         <MButton
           onPress={() => props.navigation.navigate("Cadastrar Itens")}
-          value="Cadastrar Itens"
-        ></MButton>
+          value="Cadastrar Itens"/>
+        <MButton
+          onPress={() => props.navigation.navigate("Visualizar Itens")}
+          value="Visualizar Churraqueiras e Vagas"/>
         <MButton
           onPress={() => props.navigation.navigate("VisualizarCondoResident")}
-          value="Visualizar Condominios e Moradores"></MButton>
+          value="Visualizar Condominios e Moradores"/>
       </View>
     </SafeAreaView>
   );

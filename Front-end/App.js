@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { UtilsContext } from "./src/Contexts/context";
+import { UtilsContext } from "./src/Contexts/UtilsContext";
 
 import { Index } from "./src/Pages/Index";
 import { Login } from "./src/pages/Login";
@@ -16,6 +16,7 @@ import { ReservarChurrasqueira } from "./src/Pages/ResidentPages/ReservarChurras
 import { HomeFunc } from "./src/Pages/FuncPages/HomeFunc"
 import { VisualizarCondoResident } from "./src/Pages/FuncPages/VisualizarCondoResident";
 import { CadBbqVaga } from "./src/Pages/FuncPages/CadBbqVaga";
+import { ViewBbqVaga } from "./src/Pages/FuncPages/ViewBbqVaga";
 
 export default function App() {
   const [utils, setUtils] = useState();
@@ -38,6 +39,8 @@ export default function App() {
           <Stack.Screen name="HomeFunc" component={HomeFunc} />
           <Stack.Screen name="VisualizarCondoResident" component={VisualizarCondoResident} />
           <Stack.Screen name="Cadastrar Itens" component={CadBbqVaga} />
+          <Stack.Screen name="Visualizar Itens" component={ViewBbqVaga} />
+
         </Stack.Navigator>
       </UtilsContext.Provider>
     </NavigationContainer>

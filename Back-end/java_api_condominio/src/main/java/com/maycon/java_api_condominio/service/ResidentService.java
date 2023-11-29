@@ -41,6 +41,14 @@ public class ResidentService {
         return (List<ResidentModel>) this.residentRepository.findByCondoId(id);
     }
 
+    public ResidentModel findByCpf(String cpf)
+    {
+        List<ResidentModel> All =  (List<ResidentModel>) this.residentRepository.findByCpf(cpf);
+        return All.stream()
+            .findFirst()
+            .orElse(new ResidentModel());
+    }
+
     public void delete(String id)
     {
         this.residentRepository.deleteById(id);

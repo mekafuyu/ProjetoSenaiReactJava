@@ -4,17 +4,23 @@ import MSelect from "../Components/MSelect";
 import { SafeAreaView, View } from "react-native";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import React from "react";
+import React,{useContext} from "react";
+import { UtilsContext } from "../Contexts/UtilsContext";
 
 export class Index extends React.Component{
+  static utils = UtilsContext;
+
   constructor(props) {
     super(props)
-    this.state = {options: []}
+    this.state = {
+      options: []
+    }
     this.apiUrl = process.env.EXPO_PUBLIC_API_URL;
   }
 
   componentDidMount(){
     this.getCondos()
+    console.log(UtilsContext)
   }
 
   async getCondos()
@@ -37,7 +43,11 @@ export class Index extends React.Component{
       <SafeAreaView>
         <View style={styles.container}>
           <MButton
-            onPress={() => this.props.navigation.navigate("Login")}
+            onPress={() => {
+              console.log(this.UtilsContext)
+              if(!this.utils)
+                this.props.navigation.navigate("Login")
+            }}
             icon={faRightToBracket}
             value="Login"
           ></MButton>

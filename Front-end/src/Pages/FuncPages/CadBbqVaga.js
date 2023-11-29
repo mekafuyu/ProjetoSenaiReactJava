@@ -49,7 +49,7 @@ export class CadBbqVaga extends React.Component {
       return
 
     axios
-      .post(`http://localhost:8080/${this.state.tipo}`)
+      .post(`http://localhost:8080/${this.state.tipo}`,this.state.item)
       .then((data) => {console.log(data)})
   }
 
@@ -66,7 +66,7 @@ export class CadBbqVaga extends React.Component {
                 item: { ...this.state.item, number: text },
               });
             }}
-          ></MTextInput>
+          />
           
           <MSelect
             label="Tipo de item a Cadastrar:"
