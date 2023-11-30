@@ -31,6 +31,7 @@ export function Login(props) {
         <MTextInput
           label="Senha:"
           value={currUser}
+          secureTextEntry={true}
           setValue={(text) => {
             setCurrUser({ ...currUser, pwd: text });
           }}

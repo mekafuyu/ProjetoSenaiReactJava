@@ -34,7 +34,6 @@ export class Cadastro extends React.Component {
       data.data.map((condo) => {
         newOptions.push({ value: condo.id, label: condo.name });
       });
-      console.log(newOptions);
       this.options = newOptions;
       this.setState({ ...this.state, options: newOptions });
     });
@@ -43,6 +42,12 @@ export class Cadastro extends React.Component {
   async tryCad() {
     if(this.state.user.condominiumId == "")
       return
+    if(this.state.user.pwd != this.state.cPwd)
+    {
+      console.log("Senhas não coincidem.")
+      return
+    }
+
     axios
       .get(`http://localhost:8080/condominium/id/${this.state.user.condominiumId}`)
       .then((data) => {
@@ -114,6 +119,7 @@ export class Cadastro extends React.Component {
           <MTextInput
             label="Senha:"
             value={this.state.user}
+            secureTextEntry={true}
             setValue={(text) => {
               this.setState({
                 ...this.state,
@@ -124,6 +130,7 @@ export class Cadastro extends React.Component {
           <MTextInput
             label="Confirmar Senha:"
             value={this.state.user}
+            secureTextEntry={true}
             setValue={(text) => {
               this.setState({
                 ...this.state,

@@ -11,13 +11,17 @@ export class ViewBbqVaga extends React.Component {
     this.state = {
       condoOptions: [],
       typeOptions: [
-        {value: "vaga", label: "Vaga"},
-        {value: "churrasqueira", label: "Churrasqueira"}
+        { value: "vaga", label: "Vaga" },
+        { value: "churrasqueira", label: "Churrasqueira" },
       ],
       condoSelected: "0",
       typeSelected: "",
-      items: []
+      items: [],
     };
+  }
+
+  convertDate(dateStringDb) {
+    return dateStringDb.slice(0, 16).replaceAll("-", "/").replaceAll("T", "-");
   }
 
   async getCondos() {
@@ -32,10 +36,11 @@ export class ViewBbqVaga extends React.Component {
 
   async getItems() {
     await axios
-      .get(`http://localhost:8080/${this.state.typeSelected}/condo/${this.state.condoSelected}`)
+      .get(
+        `http://localhost:8080/${this.state.typeSelected}/condo/${this.state.condoSelected}`
+      )
       .then(
-        async (data) =>
-          await this.setState({ ...this.state, items: data.data })
+        async (data) => await this.setState({ ...this.state, items: data.data })
       );
   }
 
@@ -47,7 +52,6 @@ export class ViewBbqVaga extends React.Component {
     return (
       <SafeAreaView>
         <View style={styles.container}>
-
           <MSelect
             label="Condomínio:"
             width="100"
@@ -58,7 +62,7 @@ export class ViewBbqVaga extends React.Component {
                 condoSelected: option.value,
               });
               await this.getItems();
-              console.log(this.state)
+              console.log(this.state);
             }}
           />
 
@@ -72,7 +76,7 @@ export class ViewBbqVaga extends React.Component {
                 typeSelected: option.value,
               });
               await this.getItems();
-              console.log(this.state)
+              console.log(this.state);
             }}
           />
 
@@ -81,20 +85,28 @@ export class ViewBbqVaga extends React.Component {
               <View
                 key={index}
                 index={index}
-                style={{ backgroundColor: "white", margin: 5 }}
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  backgroundColor: "grey",
+                  width: "100%",
+                  heigth: "100%",
+                  padding: 10,
+                  margin: 5,
+                }}
               >
-                <Text>{item.number}</Text>
-                {/* <MButton
-                  value="remove"
-                  width={50}
-                  color="red"
-                  onPress={async () => {
-                    await axios.delete(
-                      `http://localhost:8080/resident/delete/${resident.id}`
-                    );
-                    await this.getResidents();
-                  }}
-                /> */}
+                {item.residentId ? (
+                  <Text>
+                    {item.number} - Ocupado{"\n"}
+                    Inicio: {this.convertDate(item.startDate)}
+                    {"\n"}
+                    Fim: {this.convertDate(item.endDate)}
+                  </Text>
+                ) : (
+                  <Text>{item.number} - Disponível</Text>
+                )}
               </View>
             ))}
           </View>

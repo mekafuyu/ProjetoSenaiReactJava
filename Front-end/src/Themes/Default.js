@@ -22,8 +22,14 @@ const defaultStyle = StyleSheet.create({
     marginTop: verticalScale(10),
   },
   MTextInputField: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "start",
+    alignItems: "center",
     backgroundColor: "grey",
     width: "100%",
+    height: verticalScale(70),
+    paddingVertical: 5,
     borderRadius: 20,
   },
   MTextInputLabel: {

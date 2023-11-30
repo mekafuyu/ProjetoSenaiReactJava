@@ -58,7 +58,7 @@ export class CadBbqVaga extends React.Component {
       <SafeAreaView>
         <View style={styles.container}>
           <MTextInput
-            label="Numero:"
+            label="Número:"
             value={this.state.item}
             setValue={(text) => {
               this.setState({
@@ -66,7 +66,7 @@ export class CadBbqVaga extends React.Component {
                 item: { ...this.state.item, number: text },
               });
             }}
-          />
+          ></MTextInput>
           
           <MSelect
             label="Tipo de item a Cadastrar:"
@@ -98,8 +98,8 @@ export class CadBbqVaga extends React.Component {
             onPress={() => {
               this.tryCad()
             }}
-            width="100"
-            value="test"
+            value="Cadastrar Item"
+            color="yellow"
           ></MButton>
           
         </View>
