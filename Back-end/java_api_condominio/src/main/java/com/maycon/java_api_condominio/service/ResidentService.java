@@ -1,6 +1,7 @@
 package com.maycon.java_api_condominio.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,14 @@ public class ResidentService {
         return All.stream()
             .findFirst()
             .orElse(new ResidentModel());
+    }
+
+    public ResidentModel findById(String id)
+    {
+        Optional<ResidentModel> found = this.residentRepository.findById(id);
+        if (found.isPresent())
+            return found.get();
+        return new ResidentModel();
     }
 
     public void delete(String id)

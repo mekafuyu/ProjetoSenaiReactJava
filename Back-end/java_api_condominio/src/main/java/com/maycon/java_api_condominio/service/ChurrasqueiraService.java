@@ -12,38 +12,45 @@ import com.maycon.java_api_condominio.repository.ChurrasqueiraRepository;
 public class ChurrasqueiraService {
     
     @Autowired
-    private ChurrasqueiraRepository ChurrasqueiraRepository;
+    private ChurrasqueiraRepository churrasqueiraRepository;
 
-    public ChurrasqueiraModel save(ChurrasqueiraModel ChurrasqueiraModel)
+    public ChurrasqueiraModel save(ChurrasqueiraModel churrasqueiraModel)
     {
-        return this.ChurrasqueiraRepository.save(ChurrasqueiraModel);
+        return this.churrasqueiraRepository.save(churrasqueiraModel);
     }
 
     public void save(String id, String number, String condominiumId)
     {
         ChurrasqueiraModel newChurrasqueira = new ChurrasqueiraModel(id, number, condominiumId);
-        this.ChurrasqueiraRepository.save(newChurrasqueira);
+        this.churrasqueiraRepository.save(newChurrasqueira);
+        return;
+    }
+
+    public void update(String id, ChurrasqueiraModel churrasqueiraModel)
+    {
+        churrasqueiraModel.setId(id);
+        this.churrasqueiraRepository.save(churrasqueiraModel);
         return;
     }
 
     public List<ChurrasqueiraModel> findAll()
     {
-        return (List<ChurrasqueiraModel>) this.ChurrasqueiraRepository.findAll();
+        return (List<ChurrasqueiraModel>) this.churrasqueiraRepository.findAll();
     }
 
     public List<ChurrasqueiraModel> findByNumberInCondo(String number, String condominiumId)
     {
-        return (List<ChurrasqueiraModel>) this.ChurrasqueiraRepository.findByNumberInCondo(number, condominiumId);
+        return (List<ChurrasqueiraModel>) this.churrasqueiraRepository.findByNumberInCondo(number, condominiumId);
     }
 
     public List<ChurrasqueiraModel> findByCondoId(String id)
     {
-        return (List<ChurrasqueiraModel>) this.ChurrasqueiraRepository.findByCondoId(id);
+        return (List<ChurrasqueiraModel>) this.churrasqueiraRepository.findByCondoId(id);
     }
 
     public void delete(String id)
     {
-        this.ChurrasqueiraRepository.deleteById(id);
+        this.churrasqueiraRepository.deleteById(id);
         return;
     }
 }

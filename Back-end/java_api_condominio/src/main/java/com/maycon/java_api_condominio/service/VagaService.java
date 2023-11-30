@@ -12,38 +12,45 @@ import com.maycon.java_api_condominio.repository.VagaRepository;
 public class VagaService {
     
     @Autowired
-    private VagaRepository VagaRepository;
+    private VagaRepository vagaRepository;
 
-    public VagaModel save(VagaModel VagaModel)
+    public VagaModel save(VagaModel vagaModel)
     {
-        return this.VagaRepository.save(VagaModel);
+        return this.vagaRepository.save(vagaModel);
     }
 
     public void save(String id, String number, String condominiumId)
     {
         VagaModel newVaga = new VagaModel(id, number, condominiumId);
-        this.VagaRepository.save(newVaga);
+        this.vagaRepository.save(newVaga);
+        return;
+    }
+
+    public void update(String id, VagaModel vagaModel)
+    {
+        vagaModel.setId(id);
+        this.vagaRepository.save(vagaModel);
         return;
     }
 
     public List<VagaModel> findAll()
     {
-        return (List<VagaModel>) this.VagaRepository.findAll();
+        return (List<VagaModel>) this.vagaRepository.findAll();
     }
 
     public List<VagaModel> findByNumberInCondo(String number, String condominiumId)
     {
-        return (List<VagaModel>) this.VagaRepository.findByNumberInCondo(number, condominiumId);
+        return (List<VagaModel>) this.vagaRepository.findByNumberInCondo(number, condominiumId);
     }
 
     public List<VagaModel> findByCondoId(String id)
     {
-        return (List<VagaModel>) this.VagaRepository.findByCondoId(id);
+        return (List<VagaModel>) this.vagaRepository.findByCondoId(id);
     }
 
     public void delete(String id)
     {
-        this.VagaRepository.deleteById(id);
+        this.vagaRepository.deleteById(id);
         return;
     }
 }

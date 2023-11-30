@@ -19,40 +19,47 @@ import com.maycon.java_api_condominio.service.ChurrasqueiraService;
 public class ChurrasqueiraController {
         
     @Autowired
-    private ChurrasqueiraService ChurrasqueiraService;
+    private ChurrasqueiraService churrasqueiraService;
 
     @GetMapping 
     public List<ChurrasqueiraModel> getAllChurrasqueira()
     {
-        List<ChurrasqueiraModel> listRes = this.ChurrasqueiraService.findAll();
+        List<ChurrasqueiraModel> listRes = this.churrasqueiraService.findAll();
         return listRes;
     }
 
     @GetMapping("/condo/{id}")
     public List<ChurrasqueiraModel> getChurrasqueirasByCondo(@PathVariable String id)
     {
-        List<ChurrasqueiraModel> listRes = this.ChurrasqueiraService.findByCondoId(id);
+        List<ChurrasqueiraModel> listRes = this.churrasqueiraService.findByCondoId(id);
         return listRes;
     }
 
     @GetMapping("/condo/{id}/{number}")
     public List<ChurrasqueiraModel> getChurrasqueirasByCondo(@PathVariable String id, @PathVariable String number)
     {
-        List<ChurrasqueiraModel> listRes = this.ChurrasqueiraService.findByNumberInCondo(number, id);
+        List<ChurrasqueiraModel> listRes = this.churrasqueiraService.findByNumberInCondo(number, id);
         return listRes;
     }
     
     @PostMapping
     public void newChurrasqueira(@RequestBody ChurrasqueiraModel newChurrasqueira)
     {
-        this.ChurrasqueiraService.save(newChurrasqueira);
+        this.churrasqueiraService.save(newChurrasqueira);
+        return;
+    }
+
+    @PostMapping("/{id}")
+    public void updateVaga(@RequestBody ChurrasqueiraModel churrasqueiraToUpdate, @PathVariable String id)
+    {
+        this.churrasqueiraService.update(id, churrasqueiraToUpdate);
         return;
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteChurrasqueira(@PathVariable String id)
     {
-        this.ChurrasqueiraService.delete(id);
+        this.churrasqueiraService.delete(id);
         return;
     }
 }

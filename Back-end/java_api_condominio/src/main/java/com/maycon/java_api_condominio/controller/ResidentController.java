@@ -45,13 +45,20 @@ public class ResidentController {
         return listRes;
     }
 
+    @GetMapping("id/{id}")
+    public ResidentModel getResidentsById(@PathVariable String id)
+    {
+        ResidentModel res = this.residentService.findById(id);
+        return res;
+    }
+
     @GetMapping("/{name}")
     public List<ResidentModel> getResidentsByName(@PathVariable String name)
     {
         List<ResidentModel> listRes = this.residentService.findByName(name);
         return listRes;
     }
-    
+
     @PostMapping
     public void newResident(@RequestBody ResidentModel newResident)
     {
