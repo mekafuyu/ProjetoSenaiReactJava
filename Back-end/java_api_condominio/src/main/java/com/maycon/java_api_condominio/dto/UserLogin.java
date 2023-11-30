@@ -1,8 +1,5 @@
 package com.maycon.java_api_condominio.dto;
 
-import com.maycon.java_api_condominio.model.CondominiumModel;
-import com.maycon.java_api_condominio.model.ResidentModel;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
