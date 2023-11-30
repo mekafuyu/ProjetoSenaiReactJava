@@ -12,9 +12,8 @@ export function Login(props) {
 
   async function tryLogin(user) {
     axios.post("http://localhost:8080/resident/login", currUser)
-    .then((res) => {
-      setUtils({...utils, currUser: res.data})
-      console.log(utils)
+    .then(async (res) => {
+      await sessionStorage.setItem('loggedUser', JSON.stringify({user: res.data.name, userId: res.data.id}))
       props.navigation.navigate("HomeResident")
     });
   }
