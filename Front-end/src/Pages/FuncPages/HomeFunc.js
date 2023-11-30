@@ -14,6 +14,9 @@ export function HomeFunc(props) {
           onPress={() => props.navigation.navigate("Visualizar Itens")}
           value="Visualizar Churraqueiras e Vagas"/>
         <MButton
+          onPress={() => props.navigation.navigate("Receber Visitante")}
+          value="Receber Visitante"/>
+        <MButton
           onPress={() => props.navigation.navigate("VisualizarCondoResident")}
           value="Visualizar Condominios e Moradores"/>
       </View>

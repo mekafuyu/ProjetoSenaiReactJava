@@ -64,12 +64,12 @@ export class VisualizarCondoResident extends React.Component {
               <View
                 key={index}
                 index={index}
-                style={{ backgroundColor: "white", margin: 5 }}
+                style={{ backgroundColor: "gray", margin: 5, borderRadius: 10 }}
               >
                 <Text>{resident.name}</Text>
                 <MButton
                   value="remove"
-                  width={50}
+                  width={25}
                   color="red"
                   onPress={async () => {
                     await axios.delete(

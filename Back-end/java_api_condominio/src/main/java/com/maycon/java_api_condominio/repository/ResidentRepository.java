@@ -13,7 +13,10 @@ public interface ResidentRepository extends MongoRepository<ResidentModel, Strin
 
     @Query("{'condominiumId': ?0}")
     List<ResidentModel> findByCondoId(String id);
-
+    
     @Query("{'cpf': ?0}")
     List<ResidentModel> findByCpf(String cpf);
+
+    @Query("{'condominiumId': ?0, 'name': /.*?1.*/}")
+    List<ResidentModel> findByCondoIdAndName(String id, String name);
 }

@@ -38,6 +38,13 @@ public class ResidentController {
         return listRes;
     }
 
+    @GetMapping("/condo/{id}/{name}")
+    public List<ResidentModel> getResidentsByCondo(@PathVariable String id, @PathVariable String name)
+    {
+        List<ResidentModel> listRes = this.residentService.findByCondoIdAndName(id, name);
+        return listRes;
+    }
+
     @GetMapping("/{name}")
     public List<ResidentModel> getResidentsByName(@PathVariable String name)
     {

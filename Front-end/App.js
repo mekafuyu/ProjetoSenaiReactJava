@@ -17,6 +17,7 @@ import { HomeFunc } from "./src/Pages/FuncPages/HomeFunc"
 import { VisualizarCondoResident } from "./src/Pages/FuncPages/VisualizarCondoResident";
 import { CadBbqVaga } from "./src/Pages/FuncPages/CadBbqVaga";
 import { ViewBbqVaga } from "./src/Pages/FuncPages/ViewBbqVaga";
+import { ReceberVisitante } from "./src/Pages/FuncPages/ReceberVisitante";
 
 export default function App() {
   const [utils, setUtils] = useState();
@@ -34,12 +35,15 @@ export default function App() {
           <Stack.Screen name="Cadastro" component={Cadastro} />
           <Stack.Screen name="NewCondo" component={NewCondo} />
           <Stack.Screen name="ViewCondos" component={ViewCondos} />
+
           <Stack.Screen name="HomeResident" component={HomeResident} />
           <Stack.Screen name="ReservarChurrasqueira" component={ReservarChurrasqueira} />
+          
           <Stack.Screen name="HomeFunc" component={HomeFunc} />
           <Stack.Screen name="VisualizarCondoResident" component={VisualizarCondoResident} />
           <Stack.Screen name="Cadastrar Itens" component={CadBbqVaga} />
           <Stack.Screen name="Visualizar Itens" component={ViewBbqVaga} />
+          <Stack.Screen name="Receber Visitante" component={ReceberVisitante} />
 
         </Stack.Navigator>
       </UtilsContext.Provider>

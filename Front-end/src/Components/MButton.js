@@ -32,7 +32,7 @@ export default function MButton(props) {
           style={{ marginRight: 15 }}
         />
       ) : null}
-      <Text selectable={false} style={styles.MButtonText}>
+      <Text selectable={false} style={{...styles.MButtonText, fontSize: moderateScale(props.width / 4)}}>
         {props.value}
       </Text>
     </Pressable>

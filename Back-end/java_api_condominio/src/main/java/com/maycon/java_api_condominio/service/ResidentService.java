@@ -41,6 +41,11 @@ public class ResidentService {
         return (List<ResidentModel>) this.residentRepository.findByCondoId(id);
     }
 
+    public List<ResidentModel> findByCondoIdAndName(String id, String name)
+    {
+        return (List<ResidentModel>) this.residentRepository.findByCondoIdAndName(id, name);
+    }
+
     public ResidentModel findByCpf(String cpf)
     {
         List<ResidentModel> All =  (List<ResidentModel>) this.residentRepository.findByCpf(cpf);
