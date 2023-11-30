@@ -15,27 +15,9 @@ export class Index extends React.Component{
     this.state = {
       options: []
     }
-    this.apiUrl = process.env.EXPO_PUBLIC_API_URL;
   }
 
   componentDidMount(){
-    this.getCondos()
-    console.log(UtilsContext)
-  }
-
-  async getCondos()
-  {
-    await axios.get("http://localhost:8080/condominium")
-      .then((data) => {
-        let newOptions = []
-        data.data.map((condo) =>{
-          newOptions.push({value: condo.id, label: condo.name})
-        })
-        console.log(newOptions)
-        this.options = newOptions
-        this.setState({...this.state, options: newOptions})
-      })
-
   }
 
   render (){
@@ -70,13 +52,7 @@ export class Index extends React.Component{
             onPress={() => this.props.navigation.navigate("ViewCondos")}
             color="yellow"
             value="Ver Condominios"
-          ></MButton>
-          <MButton
-            onPress={() => this.getCondos()}
-            color="yellow"
-            value="Get condos"
-          ></MButton>
-          
+          ></MButton>          
         </View>
       </SafeAreaView>
     )

@@ -121,10 +121,10 @@ export class Reserva extends React.Component {
             }}
           />
 
-          <Text>Data de Inicio</Text>
+          <Text>Data de Inicio:</Text>
           <MDateInput onChange={(e) => this.setState({...this.state, reserva: {...this.state.reserva, startDate: e.target.value}})} />
           
-          <Text>Data de Finalização</Text>
+          <Text>Data de Finalização:</Text>
           <MDateInput onChange={(e) => this.setState({...this.state, reserva: {...this.state.reserva, endDate: e.target.value}})} />
 
           <MButton

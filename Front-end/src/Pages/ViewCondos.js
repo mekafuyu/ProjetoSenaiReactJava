@@ -26,7 +26,7 @@ export class ViewCondos extends React.Component {
             <View
               key={index}
               index={index}
-              style={{ backgroundColor: "white" }}
+              style={{ backgroundColor: "gray", borderRadius: 10 }}
             >
               <Text>{condo.name}</Text>
               <Text>{condo.cep}</Text>

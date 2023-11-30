@@ -13,14 +13,14 @@ export function NewCondo(props) {
       <View style={styles.container}>
         <MTextInput
           label="Nome:"
-          value={condo}
+          value={condo.name}
           setValue={(text) => {
             setCondo({ ...condo, name: text });
           }}
         ></MTextInput>
         <MTextInput
           label="Cep:"
-          value={condo}
+          value={condo.cep}
           setValue={(text) => {
             setCondo({ ...condo, cep: text });
           }}
@@ -31,8 +31,7 @@ export function NewCondo(props) {
               .post("http://localhost:8080/condominium", condo)
               .then(props.navigation.navigate("Index"))
           }
-          width="100"
-          value="test"
+          value="Cadastrar"
         ></MButton>
       </View>
     </SafeAreaView>

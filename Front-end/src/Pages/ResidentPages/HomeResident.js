@@ -3,7 +3,6 @@ import MButton from "../../Components/MButton";
 import { SafeAreaView, Text, View } from "react-native";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
-import { UtilsContext } from "../../Contexts/UtilsContext";
 
 export class HomeResident extends React.Component {
   constructor(props) {
@@ -29,10 +28,6 @@ export class HomeResident extends React.Component {
       <SafeAreaView>
         <View style={styles.container}>
           <Text>Olá, {this.state.loggedUser.user}</Text>
-          <MButton
-            onPress={() => {}}
-            value="Reservar uma vaga"
-          ></MButton>
           <MButton
             onPress={() => this.props.navigation.navigate("Reserva")}
             value="Reservar Vaga/Churrasqueira"

@@ -36,12 +36,10 @@ export function Login(props) {
           }}
         ></MTextInput>
         <MButton
-          width="100"
           onPress={() => {
             tryLogin();
-            // props.navigation.navigate("HomeResident")
           }}
-          value="login"
+          value="Login"
         ></MButton>
       </View>
     </SafeAreaView>

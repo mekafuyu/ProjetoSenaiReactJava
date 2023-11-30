@@ -51,6 +51,7 @@ export class Cadastro extends React.Component {
     
     axios
       .post(`http://localhost:8080/resident`, this.state.user)
+      .then(this.props.navigation.navigate("Index"))
   }
 
   render() {
@@ -134,8 +135,7 @@ export class Cadastro extends React.Component {
             onPress={() => {
               this.tryCad()
             }}
-            width="100"
-            value="test"
+            value="Cadastrar"
           ></MButton>
           
         </View>
