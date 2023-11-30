@@ -16,7 +16,7 @@ public class ChurrasqueiraModel {
     @Id
     private String id;
     private String number;
-    private String resindentId;
+    private String residentId;
     private String condominiumId;
     private String blockNumber;
     private String apartNumber;
@@ -24,13 +24,13 @@ public class ChurrasqueiraModel {
     private LocalDateTime endDate;
 
     public ChurrasqueiraModel(
-        String number, String resindentId, String condominiumId,
+        String number, String residentId, String condominiumId,
         String blockNumber, String apartNumber,
         LocalDateTime startDate, LocalDateTime endDate
     )
     {
         this.number = number;
-        this.resindentId = resindentId;
+        this.residentId = residentId;
         this.condominiumId = condominiumId;
         this.blockNumber = blockNumber;
         this.apartNumber = apartNumber;
@@ -39,15 +39,16 @@ public class ChurrasqueiraModel {
     }
     
     public ChurrasqueiraModel(
-        String number, String resindentId, String condominiumId,
-        String blockNumber, String apartNumber
+        String number,
+        String residentId, String condominiumId,
+        String startDate, String endDate
     )
     {
         this.number = number;
-        this.resindentId = resindentId;
+        this.residentId = residentId;
         this.condominiumId = condominiumId;
-        this.blockNumber = blockNumber;
-        this.apartNumber = apartNumber;
+        this.startDate = LocalDateTime.parse(startDate);
+        this.endDate = LocalDateTime.parse(endDate);
     }
 
     public ChurrasqueiraModel(

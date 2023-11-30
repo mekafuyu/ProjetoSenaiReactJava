@@ -16,7 +16,7 @@ public class VagaModel {
     @Id
     private String id;
     private String number;
-    private String resindentId;
+    private String residentId;
     private String condominiumId;
     private String blockNumber;
     private String apartNumber;
@@ -26,13 +26,13 @@ public class VagaModel {
     
 
     public VagaModel(
-        String number, String resindentId, String condominiumId,
+        String number, String residentId, String condominiumId,
         String blockNumber, String apartNumber, boolean permanent,
         LocalDateTime startDate, LocalDateTime endDate
     )
     {
         this.number = number;
-        this.resindentId = resindentId;
+        this.residentId = residentId;
         this.condominiumId = condominiumId;
         this.blockNumber = blockNumber;
         this.apartNumber = apartNumber;
@@ -42,16 +42,29 @@ public class VagaModel {
     }
     
     public VagaModel(
-        String number, String resindentId, String condominiumId,
+        String number, String residentId, String condominiumId,
         String blockNumber, String apartNumber, boolean permanent
     )
     {
         this.number = number;
-        this.resindentId = resindentId;
+        this.residentId = residentId;
         this.condominiumId = condominiumId;
         this.blockNumber = blockNumber;
         this.apartNumber = apartNumber;
         this.permanent = permanent;
+    }
+
+    public VagaModel(
+        String number,
+        String residentId, String condominiumId,
+        String startDate, String endDate
+    )
+    {
+        this.number = number;
+        this.residentId = residentId;
+        this.condominiumId = condominiumId;
+        this.startDate = LocalDateTime.parse(startDate);
+        this.endDate = LocalDateTime.parse(endDate);
     }
 
     public VagaModel(

@@ -34,8 +34,8 @@ export class HomeResident extends React.Component {
             value="Reservar uma vaga"
           ></MButton>
           <MButton
-            onPress={() => this.props.navigation.navigate("ReservarChurrasqueira")}
-            value="Reservar churrasqueira"
+            onPress={() => this.props.navigation.navigate("Reserva")}
+            value="Reservar Vaga/Churrasqueira"
           ></MButton>
           <MButton onPress={() => console.log("a")} value="Denuncia"></MButton>
           <MButton
